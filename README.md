@@ -35,7 +35,7 @@ There are 3 ways to run the script
    
    1. Open the JavaScript file named "core.js" from the Git repository.
    2. The file contains comments explaining the purpose of each function.
-   3. Try running the functions in the `[Developer Tools](https://en.wikipedia.org/wiki/Web_development_tools) Console` of your browser while on the [Student Information System Log In Page](https://portal.kcisec.com/China/Account/LogIn).
+   3. Try running the functions in the <a href="https://en.wikipedia.org/wiki/Web_development_tools">Developer Tools</a> Console of your browser while on the [Student Information System Log In Page](https://portal.kcisec.com/China/Account/LogIn).
 
 ## License
 
