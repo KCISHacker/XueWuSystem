@@ -1,0 +1,35 @@
+body {
+width: 300px;
+padding: 10px;
+font-family: Arial, sans-serif;
+}
+button {
+width: 100%;
+padding: 8px 0;
+background-color: #ffb6c1;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+button:disabled{
+background-color: #a27c82;
+cursor: default;
+}
+p {
+text-align: center;
+color: red;
+font-size: 12px;
+}
+.tip{
+color: pink;
+}
+.github-ico{
+color: #ffb6c1;
+transition: all 0.5s ease-in-out;
+}
+.github-ico:hover{
+color: #775c60;
+}
+.title{
+font-size: 20px;
+}
