@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var button = contentDiv.children[0];
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
       var currentUrl = tabs[0].url;
-      if (currentUrl.includes('portal.kcisec.com/China/Account/LogIn')) {
+      if (currentUrl.toLowerCase().includes('portal.kcisec.com/china/account/login')) {
         var flag = false;
         chrome.tabs.executeScript(tabs[0].id, {
-          code: `document.getElementById('hacked');`
+          code: `document.getElementById('tweaked');`
         }, (result) => {
           if (result[0]){
             document.getElementsByTagName('button')[0].setAttribute("disabled", true);

