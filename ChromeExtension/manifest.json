@@ -1,16 +1,21 @@
 {
 	"manifest_version": 2,
 	"name": "XueWu",
-	"version": "1.8",
+	"version": "2.0",
 	"description": "XueWu System in Chrome extension. GitHub: https://www.github.com/KCISHacker/XueWuSystem",
 	"browser_action": {
-	  "default_popup": "popup.html"
+		"default_popup": "popup.html"
 	},
 	"permissions": [
-	  "activeTab"
+		"activeTab",
+		"storage"
 	],
-	"icons":
-	{
+	"background": {
+		"scripts": [
+			"js/background.js"
+		]
+	},
+	"icons": {
 		"336": "ico.png"
 	}
-  }
+}

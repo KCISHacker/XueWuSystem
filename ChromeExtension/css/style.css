@@ -1,35 +1,49 @@
+:root {
+    --theme-color: #009fa8;
+    --disabled-theme-color: #006f75;
+    --theme-forecolor: white;
+    --disabled-theme-forecolor: #c5c5c5;
+}
+
 body {
-width: 300px;
-padding: 10px;
-font-family: Arial, sans-serif;
+    width: 300px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
 }
+
 button {
-width: 100%;
-padding: 8px 0;
-background-color: #ffb6c1;
-border: none;
-border-radius: 4px;
-cursor: pointer;
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 4px;
+    margin-top: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--theme-color);
+    color: var(--theme-forecolor)
 }
-button:disabled{
-background-color: #a27c82;
-cursor: default;
+
+button:disabled {
+    background-color: var(--disabled-theme-color);
+    color: var(--disabled-theme-forecolor);
+    cursor: default;
 }
+
 p {
-text-align: center;
-color: red;
-font-size: 12px;
+    text-align: center;
+    color: red;
+    font-size: 12px;
+    margin-bottom: 0;
 }
-.tip{
-color: pink;
+
+.tip {
+    color: var(--theme-color);
 }
-.github-ico{
-color: #ffb6c1;
-transition: all 0.5s ease-in-out;
+
+.github-ico {
+    color: var(--theme-color);
+    transition: all 0.5s ease-in-out;
 }
-.github-ico:hover{
-color: #775c60;
-}
-.title{
-font-size: 20px;
+
+.title {
+    font-size: 20px;
 }

@@ -4,31 +4,31 @@
 
 A system written in Javascript that allows users to log in into Student Information System with any identity without password.
 
-## Running It
+## Run It
 
-There are 3 ways to run the script
+There are 4 ways to run the script
 
-1. Running using `javascipt:` URL
+1. Run using `javascipt:` URL
    
    1. Copy the following URL:
       
-      - Offline Edition
+      - Offline Edition (Can be used anywhere without internet connection)
         
         ```javascript
-        javascript:(function(){console.log("Hello from XueWu System Core Javascript. (C)opyright 2024 KCISHackers. All Rights reserved. Visit: https://www.github.com/KCISHacker/XueWuSystem for more info.");if(document.getElementById("tweaked")){alert('This page had already been tweaked! Do not run twice!');return;}function tweak(id){document.cookie="DSAI="+id+";path=/";fetch(window.location.origin+'/DSAI/Query/Form_ListDetention?strKeyWord1=').then(response=>response.json()).catch(error=>(function(){console.error(error);if(error.name=='SyntaxError'){alert(id+' seems not exist. Check your spelling.');return;}alert("Error while tweaking "+id+"! "+error);successed=false;}()));}function btn_onclick(){if(document.getElementById("UserId").value==''){alert('Username field cannot be empty!');return;}tweak(document.getElementById("UserId").value);window.location.href="/DSAI/Home";}document.getElementsByName('btn_s')[0].addEventListener("click",function(){btn_onclick();});document.getElementsByClassName("main_logout")[0].innerText="tweaked by 学武系统tweaker";document.getElementsByClassName("ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset")[1].innerHTML="<div style=\"color:red\">This program is for learning reference only, rather than abusing, or you'll take the risk!</div>";document.getElementById("UserId").addEventListener("keyup",function(event){if(event.keyCode===13){event.preventDefault();btn_onclick();}});var mark=document.createElement('div');mark.id='tweaked';document.body.appendChild(mark);}())
+        javascript:(function(){console.log("Hello from XueWu System Core Javascript. (C)opyright 2024 KCISHackers. All Rights reserved. Visit: https://www.github.com/KCISHacker/XueWuSystem for more info.");if(document.getElementById("tweaked")){alert('This page had already been tweaked! Do not run twice!');return;}function tweak(id){document.cookie="DSAI="+id+";path=/";fetch(window.location.origin+'/DSAI/Query/Form_ListDetention?strKeyWord1=').then(response=>response.json()).catch(error=>(function(){console.error(error);if(error.name=='SyntaxError'){alert(id+' seems not exist. Check your spelling.');return;}alert("Error while tweaking "+id+"! "+error);}()));}function btn_onclick(){if(document.getElementById("UserId").value==''){alert('Username field cannot be empty!');return;}tweak(document.getElementById("UserId").value);window.location.href="/DSAI/Home";}document.getElementsByName('btn_s')[0].addEventListener("click",function(){btn_onclick();});document.getElementsByClassName("main_logout")[0].innerText="tweaked by 学武系统tweaker";document.getElementsByClassName("ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset")[1].innerHTML="<div style=\"color:red\">This program is for learning reference only, rather than abusing, or you'll take the risk!</div>";document.getElementById("UserId").addEventListener("keyup",function(event){if(event.keyCode===13){event.preventDefault();btn_onclick();}});var mark=document.createElement('div');mark.id='tweaked';document.body.appendChild(mark);}())
         ```
       
-      - Online Edition (Need to access to github.io, but shorter)
+      - Online Edition (Need to access to raw.githubusercontent.com, but shorter)
         
         ```javascript
-        javascript:(function(){var s=document.createElement('script'),ss='https://kcishacker.github.io/res/XueWu.js';s.src=ss;document.body.appendChild(s);}())
+        javascript:(function(){var s=document.createElement('script');s.src='https://raw.githubusercontent.com/KCISHacker/XueWuSystem/main/core.js';document.body.appendChild(s);}())
         ```
    
    2. Visit this URL while you are in [Student Information System Log In Page](https://portal.kcisec.com/China/Account/LogIn). The Javascript should inject correctly. **If you are using Safari, skip this step.**
    
    3. You can save this URL as a bookmark and use it anytime.
 
-2. Installing as a browser extension **(may not work for Safari or FireFox)**:
+2. Install as a browser extension **(may not work for Safari or FireFox)**:
    
    1. Go to [Extension Setting](about://extensions) page in your brower .
    
@@ -40,7 +40,17 @@ There are 3 ways to run the script
    
    5. It is now installed on your brower. Do not move, rename, or delete the `Chrome Extension` folder after installation.
 
-3. Running the script manually:
+3. Install as a Tampermonkey script :
+   
+   1. Firstly you need to have [Tampermonkey](https://www.tampermonkey.net) installed.
+   
+   2. Go to file [tampermonkey_script.user.js](https://raw.githubusercontent.com/KCISHacker/XueWuSystem/main/tampermonkey_script.user.js) and [view as raw](https://raw.githubusercontent.com/KCISHacker/XueWuSystem/main/tampermonkey_script.user.js).
+   
+   3. Tempermonkey should then detect the script and offer an installation page.
+   
+   4. You can disable the script anytime in the Tampermonkey menu.
+
+4. Run the script manually:
    
    1. Open the JavaScript file named "core.js" from the Git repository.
    2. The file contains comments explaining the purpose of each function.
