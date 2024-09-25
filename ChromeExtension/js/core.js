@@ -18,7 +18,7 @@ function tweak(id){
     .catch(error=>(function(){
         console.error(error);
         if(error.name=='SyntaxError'){
-            alert(id+' seems not exist. Check your spelling.');
+            alert(id+' does not seem to exist. Check your spelling.');
             return;
         }
         alert("Error while tweaking "+id+"! "+error);
