@@ -2,7 +2,12 @@
 
 ***Zhuang ShengLi Database Presented***
 
-A system written in Javascript that allows users to log in into Student Information System with any identity without password.
+A system written in Javascript that allows users to log in into KCIS Student Information System with any identity without password.
+
+## What??
+
+An anonymous student of [KCIS](https://kunshan.kcis.org.cn/default.html) found a critical bug in the school's student info system, which allows users to bypass password check.  
+This repo is a demostration of the reproduction of the bug written in JavaScript.
 
 ## Run It
 
