@@ -51,7 +51,7 @@ There are 4 ways to run the script
    
    2. Go to file [tampermonkey_script.user.js](https://raw.githubusercontent.com/KCISHacker/XueWuSystem/main/tampermonkey_script.user.js) and [view as raw](https://raw.githubusercontent.com/KCISHacker/XueWuSystem/main/tampermonkey_script.user.js).
    
-   3. Tempermonkey should then detect the script and offer an installation page.
+   3. Tempermonkey should then detect the script and pop an installation page.
    
    4. You can disable the script anytime in the Tampermonkey menu.
 
