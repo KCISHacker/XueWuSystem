@@ -29,7 +29,7 @@ There are 4 ways to run the script
         javascript:(function(){var s=document.createElement('script');s.src='https://raw.githubusercontent.com/KCISHacker/XueWuSystem/main/core.js';document.body.appendChild(s);}())
         ```
    
-   2. Visit this URL while you are in [Student Information System Log In Page](https://portal.kcisec.com/China/Account/LogIn). The Javascript should inject correctly. **If you are using Safari, skip this step.**
+   2. Visit this URL while you are in [Student Information System Log In Page](https://portal.kcisec.com/China/Account/LogIn). The Javascript should inject correctly. **If you are using Safari, it won't work.**
    
    3. You can save this URL as a bookmark and use it anytime.
 
