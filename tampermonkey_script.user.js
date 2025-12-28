@@ -81,11 +81,12 @@
 			document.body.appendChild(mark);
 		}
 		core();
-		/* Extra code for enabling develop tool that is originally banned */
+		/* some extra code to fuck up the thing trying to froze devtools */
 		let override_script = document.createElement('script');
 		override_script.innerText =
-		"window.onkeydown = check = function () {}; document.getElementById('override_script').remove();";
+		"window.onkeydown = check = function () {}; document.getElementById('override_script').remove();window.doCheck = function () {throw new Error(\"devtool saved :3\");};";
 		override_script.id = 'override_script';
 		document.body.append(override_script);
     }
+
 })();
